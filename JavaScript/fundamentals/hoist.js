@@ -130,4 +130,6 @@ console.log(genre);
 PRINTS undefined, rock, r&b, disco
 */
 
-
+// git branch -M main
+// git remote add origin https://github.com/frutata/MERN_coding_dojo.git
+// git push -u origin main
