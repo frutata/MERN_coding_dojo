@@ -130,6 +130,68 @@ console.log(genre);
 PRINTS undefined, rock, r&b, disco
 */
 
-// git branch -M main
-// git remote add origin https://github.com/frutata/MERN_coding_dojo.git
-// git push -u origin main
+// 7.
+var dojo;
+function learn() {
+    var dojo;
+    dojo = "seattle";
+    console.log(dojo);
+    dojo = "burbank";
+    console.log(dojo);
+}
+dojo = "san jose";
+console.log(dojo);
+learn();
+console.log(dojo);
+
+/* 
+dojo = "san jose";
+console.log(dojo);
+learn();
+function learn() {
+    dojo = "seattle";
+    console.log(dojo);
+    var dojo = "burbank";
+    console.log(dojo);
+}
+console.log(dojo);
+
+PRINTS san jose, seattle, burbank, san jose
+*/
+
+
+// 8.
+console.log(makeDojo("Chicago", 65));
+console.log(makeDojo("Berkeley", 0));
+function makeDojo(name, students){
+    const dojo = {};
+    dojo.name = name;
+    dojo.students = students;
+    if(dojo.students > 50){
+    dojo.hiring = true;
+    }
+    else if(dojo.students <= 0){
+    dojo = "closed for now";
+    }
+    return dojo;
+}
+
+/* 
+function makeDojo(name, students){
+    const dojo;
+    dojo = {};
+    dojo.name = name;
+    dojo.students = students;
+    if(dojo.students > 50){
+        dojo.hiring = true;
+    }
+    else if(dojo.students <= 0){
+        dojo = "closed for now";
+    }
+    return dojo;
+}
+console.log(makeDojo("Chicago", 65));
+console.log(makeDojo("Berkeley", 0));
+
+PRINTS error
+*/
