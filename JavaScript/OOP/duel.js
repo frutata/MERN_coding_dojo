@@ -64,7 +64,7 @@ let Unhandled = new Effect("Unhandled Promise Rejection", 1, "Reduces target's r
 
 let Pair = new Effect("Pair Programming", 3, "Increases target's power by 2", "power", 2);
 
-console.log(RedBeltNinja, BlackBeltNinja);
+// console.log(RedBeltNinja, BlackBeltNinja);
 
 HardAlgo.play(RedBeltNinja);
 
@@ -74,5 +74,5 @@ Pair.play(BlackBeltNinja);
 
 RedBeltNinja.attack(BlackBeltNinja);
 
-console.log(RedBeltNinja, BlackBeltNinja);
+// console.log(RedBeltNinja, BlackBeltNinja);
 
