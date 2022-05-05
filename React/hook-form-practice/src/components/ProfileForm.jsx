@@ -53,21 +53,11 @@ const ProfileForm = () => {
                             <p>Confirm</p>
                         </div>
                         <div className='right'>
-                            <div>
                                 <p>{firstName}</p>
-                            </div>
-                            <div>
                                 <p>{lastName}</p>
-                            </div>
-                            <div>
                                 <p>{email}</p>
-                            </div>
-                            <div>
                                 <p>{password}</p>
-                            </div>
-                            <div>
                                 <p>{confirm}</p>
-                            </div>
                         </div>
                     </div>
                 </div>
