@@ -68,10 +68,6 @@
     margin: 20px;
 }
 
-.border {
-    border-radius: 10%;
-}
-
 .outline {
     outline: 2px dotted red;
 }
