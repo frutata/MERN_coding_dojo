@@ -6,7 +6,7 @@ const Box = ()=>{
     let [fav, setFav] = useState(false);
 
     let [colorList, setColorList] = useState([]);
-
+    console.log("in the box.jsx component")
     const submitColor = (e)=>{
 
         // prevents form from refreshing the page upon submission
