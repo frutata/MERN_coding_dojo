@@ -3,6 +3,11 @@ const app = express(); //create our app variable which is an instance of express
 const port = 8000;
 const { faker } = require('@faker-js/faker'); //import faker library so we can use it to generate fake random data
 
+//NEED THIS TO HANDLE POST REQUESTS! HAVE THESE TWO LINES BEFORE THE ROUTES!!!
+//for this assignment we aren't making post requests so we don't need these two lines of code
+// app.use(express.json()); //lets our app convert form info into json
+// app.use(express.urlencoded({extended:true})); //lets our app parse form information
+
 //create our api endpoints here: eg-> http://localhost:8000/api/hello
 
 // app.get("/api/hello", (req, res)=>{
