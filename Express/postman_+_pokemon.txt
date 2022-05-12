@@ -1,0 +1,9 @@
+1. https://pokeapi.co/api/v2/pokemon/bulbasaur1
+
+2. https://pokeapi.co/api/v2/pokemon/chimchar
+
+3. https://pokeapi.co/api/v2/pokemon/ivysaur
+
+4. https://pokeapi.co/api/v2/pokemon/arceus
+
+5. https://pokeapi.co/api/v2/pokemon/dialga
