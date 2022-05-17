@@ -54,3 +54,17 @@ module.exports.deleteJoke = (req, res) => {
             res.json({ msg: "An error occured when trying to delte a joke!", error: err })
         })
 }
+// not working!!!
+module.exports.findRandomJokes = (req, res) => {
+    Jokes.find()
+        .then(randomJoke => {
+            //get a random index number from index 0 up to but not including allJokes.length
+            // console.log(randomJoke);
+            let randomIdx = Math.floor(Math.random()*allJokes.length)
+            res.json({results: randomJoke[Math.floor(Math.random()*allJokes.length)]})
+            // console.log(randomIdx);
+        })
+        .catch(err => {
+            res.json({ msg: "An error occured when trying to find a random joke!", error: err })
+        })
+}
