@@ -28,6 +28,7 @@ const AllUsers = () => {
                             <h3><Link to={`/user/${userObj._id}`}>{userObj.title}</Link></h3>
                             <p>${userObj.price}</p>
                             <p>Description: {userObj.description}</p>
+                            <p><Link to={`/user/edit/${userObj._id}`}>Edit</Link></p>
                         </div>
                     )
                 })

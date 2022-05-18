@@ -11,7 +11,7 @@ const UserSchema = new mongoose.Schema({
     price: {
         type: Number,
         required: [true, "A price input is required!"],
-        minlength: [0.01, "Price can't be lower than $0.01!"]
+        minlength: [0, "Price can't be lower than $0!"]
     },
     description: {
         type: String,

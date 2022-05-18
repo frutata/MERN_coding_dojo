@@ -9,6 +9,7 @@ import {
 import AllUsers from './components/AllUsers';
 import Form from './components/Form';
 import OneUser from './components/OneUser';
+import EditUser from './components/EditUser';
 
 function App() {
     return (
@@ -24,6 +25,9 @@ function App() {
                     </Route>
                     <Route exact path="/user/:_id">
                         <OneUser/>
+                    </Route>
+                    <Route exact path="/user/edit/:_id">
+                        <EditUser/>
                     </Route>
                 </Switch>
 
