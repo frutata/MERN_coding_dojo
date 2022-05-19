@@ -4,6 +4,7 @@ import axios from 'axios';
 import {
     Link
 } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 
 const EditUser = () => {
 
@@ -11,6 +12,9 @@ const EditUser = () => {
 
     //state variable to store the one user we get back from the api call
     const [userInfo, setUserInfo] = useState({});
+
+    //initialize history so we can redirect using history.push
+    const history = useHistory();
 
     //this axios call helps us prepopulate the form in addition to editing information
     useEffect(() => {
@@ -32,11 +36,24 @@ const EditUser = () => {
         })
     }
 
+    const submitHandler = (e)=>{
+        e.preventDefault();
+
+        axios.put(`http://localhost:8000/api/user/${_id}`, userInfo)
+            .then(res=>{
+                console.log("Response:", res);
+                history.push("/");
+            })
+            .catch(err=>{
+                console.log("Error:", err);
+            })
+    }
+
     return (
         <>
 
             <div className='formOutline'>
-                <form>
+                <form onSubmit={submitHandler}>
                     <Link to={"/"}>Home</Link>
                     <div className='flex padding'>
                         <div className='right'>

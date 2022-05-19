@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const Form = () => {
+const Form = (props) => {
 
     let [title, setTitle] = useState("");
     let [price, setPrice] = useState(0);
@@ -25,10 +25,13 @@ const Form = () => {
                     setOurErrors(res.data.error.errors);
                 }
 
-                //clear out the state variables to clear the form
-                setTitle("");
-                setPrice(0);
-                setDescription("");
+                else {//clear out the state variables to clear the form if user was successfully created
+                    setTitle("");
+                    setPrice(0);
+                    setDescription("");
+
+                    props.setFormSubmittedToggle(!props.formSubmittedToggle);
+                }
             })
             .catch(err => {
                 console.log("Error:", err);
