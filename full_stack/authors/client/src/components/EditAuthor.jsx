@@ -16,12 +16,15 @@ const EditAuthor = () => {
     //initialize history so we can redirect using history.push
     const history = useHistory();
 
+    //state variable to store validation errors inside of
+    let [ourErrors, setOurErros] = useState({});
+
     //this axios call helps us prepopulate the form in addition to editing information
     useEffect(() => {
         axios.get(`http://localhost:8000/api/author/${_id}`)
             .then(res => {
                 console.log("Response:", res);
-                setAuthorInfo(res.data.results);
+                    setAuthorInfo(res.data.results);
             })
             .catch(err => {
                 console.log("Error:", err);
@@ -52,7 +55,14 @@ const EditAuthor = () => {
         axios.put(`http://localhost:8000/api/author/${_id}`, authorInfo)
             .then(res => {
                 console.log("Response:", res);
-                history.push("/");
+
+                if(res.data.error){
+                    //if there are validation errors we need to save them
+                    setOurErros(res.data.error.errors);
+                }
+                else{
+                    history.push("/");
+                }
             })
             .catch(err => {
                 console.log("Error:", err);
@@ -68,6 +78,7 @@ const EditAuthor = () => {
                         <div className="right">
                             <label htmlFor="name">Name:</label>
                         </div>
+                        <p>{ourErrors.name?.message}</p>
                         <div className="left">
                             <input type="text" id='name' value={authorInfo.name} name="name" onChange={changeHandler} />
                         </div>
@@ -76,6 +87,7 @@ const EditAuthor = () => {
                         <div className="right">
                             <label htmlFor="bestSeller">Check box if Best Seller:</label>
                         </div>
+                        <p>{ourErrors.bestSeller?.message}</p>
                         <div className="left">
                             <input type="checkbox" id='bestSeller' checked={authorInfo.bestSeller} name="bestSeller" onChange={changeHandler} />
                         </div>
